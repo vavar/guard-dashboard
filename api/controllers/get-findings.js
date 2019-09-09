@@ -1,5 +1,3 @@
-'use strict';
-const _ = require('lodash');
 const HTTPStatus = require('http-status');
 const debug = require('debug')('api-get-findings');
 
@@ -7,7 +5,7 @@ const db = require('../models');
 
 class NotFoundScanResult extends Error {
     constructor() {
-        super('not found scan result')
+        super('not found scan result');
     }
 }
 
@@ -24,4 +22,4 @@ module.exports = async function getFindings(req, res) {
         debug(err);
         res.status(HTTPStatus.NOT_FOUND).end();
     }
-}
+};

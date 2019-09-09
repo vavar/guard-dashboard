@@ -1,18 +1,19 @@
-'use strict';
 const HTTPStatus = require('http-status');
 const debug = require('debug')('drone-save-action');
 
 const db = require('../models');
 
 module.exports = async function createResult(req, res) {
-    const { status, findings, scanningAt, finishedAt } = req.body;
+    const {
+        status, findings, scanningAt, finishedAt,
+    } = req.body;
     const result = {
         status,
         findings,
         scanningAt,
         finishedAt,
-        queuedAt: Date.now()
-    }
+        queuedAt: Date.now(),
+    };
 
     try {
         await db.Result.save(result);
@@ -23,4 +24,4 @@ module.exports = async function createResult(req, res) {
     }
 
     res.json(result);
-}
+};

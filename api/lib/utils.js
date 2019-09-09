@@ -10,7 +10,7 @@ function wrap(fn) {
 }
 
 function wrapAll(fns) {
-    return _.map(fns, fn => wrap(fn));
+    return _.map(fns, (fn) => wrap(fn));
 }
 
 function setRoutes(router, routes) {
