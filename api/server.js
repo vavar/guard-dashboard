@@ -43,5 +43,5 @@ if (cluster.isMaster) {
         });
 
         console.log(`Worker ${process.pid} started`);
-    }).catch(console.log);
+    }).catch(debug);
 }
