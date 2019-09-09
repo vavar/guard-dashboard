@@ -1,4 +1,4 @@
-from node:12-alpine
+FROM node:12-alpine
 
 COPY . /usr/src/app/
 WORKDIR /usr/src/app
