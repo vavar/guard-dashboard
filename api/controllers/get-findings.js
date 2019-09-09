@@ -6,7 +6,7 @@ const debug = require('debug')('api-get-findings');
 const db = require('../models');
 
 class NotFoundScanResult extends Error {
-    constructor(){
+    constructor() {
         super('not found scan result')
     }
 }
