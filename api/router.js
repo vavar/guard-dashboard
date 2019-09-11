@@ -12,7 +12,7 @@ const routes = [
         handler: controller.createResult,
     },
     {
-        path: '/api/results/:id/findings',
+        path: '/api/repository/:id/findings',
         method: 'GET',
         handler: controller.getFindings,
     },

@@ -18,29 +18,23 @@ services:
       - db
     expose:
       - 8081
-    ports: 
-      - "8081:8081"
     networks:
       - backend
       - frontend
-    volumes:
-      - ./api:/usr/src/app
     environment:
       - PORT=8081
       - NODE_ENV=production
-  # web:
-  #   build: ./dashboard
-  #   image: node:8
-  #   working_dir: /usr/src/app
-  #   command: ["npm","start"]
-  #   depends_on:
-  #     - server
-  #   networks:
-  #     - frontend
-  #   ports: 
-  #     - "3000:3000"
-  #   volumes:
-  #     - ./web:/usr/src/app
+      - DEBUG=api*
+  dashboard:
+    build: ./dashboard
+    depends_on:
+      - api
+    networks:
+      - frontend
+    ports: 
+      - "3000:3000"
+    environment:
+      - BROWSER=none
 
 networks:
   frontend:

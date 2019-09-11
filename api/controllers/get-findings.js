@@ -17,7 +17,7 @@ module.exports = async function getFindings(req, res) {
         if (!scanResult) {
             throw new NotFoundScanResult();
         }
-        res.json(scanResult.findings);
+        res.json(scanResult);
     } catch (err) {
         debug(err);
         res.status(HTTPStatus.NOT_FOUND).end();
